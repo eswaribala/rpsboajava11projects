@@ -7,11 +7,16 @@ import java.util.Random;
 
 import com.boa.java9.models.Customer;
 
-public class SafeVarArgsTest {
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
+public class SafeVarArgsTest {
+    @SafeVarargs 
 	private void readCustomers(int i, List...customers) {
+		log.info("Received Message Random Value:"+String.valueOf(i));
 		for(List<Customer> customer:customers) {
-			System.out.println(customer);
+			
+			log.info(customer.toString());
 		}
 	}
 	
