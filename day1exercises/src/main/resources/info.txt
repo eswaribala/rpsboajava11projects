@@ -1,0 +1,9 @@
+number of images: 3
+BufferedImage@4ef37659: type = 6 ColorModel: #pixelBits = 32 numComponents = 4 color space = java.awt.color.ICC_ColorSpace@27ff5d15 transparency = 3 has alpha = true isAlphaPre = false ByteInterleavedRaster: width = 240 height = 240 #numDataElements 4 dataOff[0] = 3
+BufferedImage@69997e9d: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@27ff5d15 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 256 height = 206 #numDataElements 3 dataOff[0] = 2
+BufferedImage@793be5ca: type = 5 ColorModel: #pixelBits = 24 numComponents = 3 color space = java.awt.color.ICC_ColorSpace@27ff5d15 transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 806 height = 648 #numDataElements 3 dataOff[0] = 2
+
+Image for destination[888,222]: [806,648]
+Image for destination[333,333]: [806,648]
+Image for destination[256,128]: [256,206]
+Image for destination[222,222]: [240,240]
