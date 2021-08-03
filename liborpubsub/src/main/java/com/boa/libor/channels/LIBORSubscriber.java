@@ -25,6 +25,12 @@ public class LIBORSubscriber implements Subscriber<MarketData>{
 		// TODO Auto-generated method stub
 		
 		log.info("Item Received,"+count+","+item);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.subscription.request(1);
 		count++;
 	

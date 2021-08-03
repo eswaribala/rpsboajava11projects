@@ -15,11 +15,22 @@ public class LIBORPublisher {
 		LIBORSubscriber subscriber=new LIBORSubscriber();
 		//Register Subscriber
 		publisher.subscribe(subscriber);
+		System.out.println(publisher.getSubscribers().size());
 		
-		for(int i=0;i<100;i++) {
+		final int messageCount=100;
+		for(int i=0;i<messageCount;i++) {
 			publisher.submit(new MarketData(LocalDate.now(),new Random().nextDouble()));
 		}
-		
+		while(subscriber.count<messageCount) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+		publisher.close();
 		
 	}
 
