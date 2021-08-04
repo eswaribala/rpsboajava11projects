@@ -1,4 +1,4 @@
-package com.boa.forexpubsub.utilities;
+package com.boa.java9.utilities;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -6,8 +6,13 @@ import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
-import com.boa.forexpubsub.models.Photo;
+import com.boa.java9.models.Photo;
+import com.google.gson.Gson;
+
+
 //import com.google.gson.Gson;
 
 //synchronous call 
@@ -34,8 +39,16 @@ public class Http2Demo {
 	       // System.out.println(response.statusCode());
 
 	        // print response body
-	   //     Gson gson=new Gson();
-	      System.out.println(response.body());
+	      Gson gson=new Gson();
+	      Photo[] photos=gson.fromJson(response.body(), Photo[].class);
+			/*
+			 * for(Photo photo:photos) { System.out.println(photo.getThumbnailUrl()); }
+			 */
+	      List<Photo> photoList=Arrays.asList(photos);
+	      photoList.stream().map(p->p.getThumbnailUrl()).
+	                forEach(p->System.out.println(p));
+	      
+	     // System.out.println(response.body());
 	     
 	      
 		} catch (IOException e) {
