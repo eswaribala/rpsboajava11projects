@@ -8,9 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Photo {
-	private String albumId;
-    private long id;
-    private String title;
-    private String url;
-    private String thumbnailUrl;
+	public String albumId;
+	public long id;
+	public String title;
+	public String url;
+	public String thumbnailUrl;
+	
+    
 }
